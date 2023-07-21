@@ -63,6 +63,22 @@ spring:
             - Path=/back-management/**
           filters:
             - StripPrefix=1
+
+        - id: middleware
+          uri: lb://middleware
+          order: 1
+          predicates:
+            - Path=/middleware/**
+          filters:
+            - StripPrefix=1
+
+        - id: storage
+          uri: lb://storage
+          order: 1
+          predicates:
+            - Path=/storage/**
+          filters:
+            - StripPrefix=1
       discovery:
         locator:
           enabled: true

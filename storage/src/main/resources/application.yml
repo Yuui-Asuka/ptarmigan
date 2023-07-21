@@ -1,0 +1,38 @@
+server:
+  port: 9001
+
+spring:
+
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      ribbon:
+        enabled: true
+      discovery:
+        service-name: es-log
+
+  main:
+    web-application-type: servlet
+
+  application:
+    name: es-log
+
+
+  web:
+    resources:
+      static-locations: classpath:/static/
+      add-mappings: true
+  elasticsearch:
+    username: elastic
+    password: 71*JwlJ-N2ZjoQ=QQQ_B
+
+
+
+
+
