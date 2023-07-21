@@ -1,0 +1,63 @@
+server:
+  port: 7010
+
+spring:
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+
+      discovery:
+        service-name: user-module
+      ribbon:
+        enabled: true
+
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
+
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+    discovery-client-enabled: true
+
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  main:
+    web-application-type: servlet
+
+  application:
+    name: ptarmigan-user-module
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  web:
+    resources:
+      static-locations: classpath:/static/
+      add-mappings: true
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+      lettuce:
+        pool:
+          max-active: 10
+          max-idle: 10
+          min-idle: 0
+          max-wait: -1ms
+
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+

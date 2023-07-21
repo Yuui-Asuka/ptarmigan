@@ -1,0 +1,31 @@
+server:
+  port: 9004
+
+spring:
+
+  main:
+    web-application-type: servlet
+
+  application:
+    name: back-management
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+
+      discovery:
+        service-name: back-management
+
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306
+    username: root
+    password: 123456
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

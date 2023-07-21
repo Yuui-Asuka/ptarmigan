@@ -1,0 +1,69 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    consul:
+      discovery:
+        service-name: api-gateway
+      host: 127.0.0.1
+      port: 8500
+
+    gateway:
+      routes:
+        - id: user-module
+          uri: lb://user-module
+          order: 1
+          predicates:
+            - Path=/user-service/**
+          filters:
+            - StripPrefix=1
+
+        - id: payment
+          uri: lb://payment
+          order: 1
+          predicates:
+            - Path=/payment/**
+          filters:
+            - StripPrefix=1
+
+
+
+        - id: inventory
+          uri: lb://inventory
+          order: 1
+          predicates:
+            - Path=/inventory/**
+          filters:
+            - StripPrefix=1
+
+        - id: hr-management
+          uri: lb://hr-management
+          order: 1
+          predicates:
+            - Path=/hr-management/**
+          filters:
+            - StripPrefix=1
+
+        - id: finance
+          uri: lb://finance
+          order: 1
+          predicates:
+            - Path=/finance/**
+          filters:
+            - StripPrefix=1
+
+        - id: back-management
+          uri: lb://back-management
+          order: 1
+          predicates:
+            - Path=/back-management/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+

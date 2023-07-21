@@ -1,0 +1,26 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      max-poll-records: 500
+      heartbeat-interval: 3000
+      fetch-max-wait: 5000
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      compression-type: none
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        instance-id: middleware
+    discovery:
+      service-name: middleware
+
+  application:
+    name: middleware
+
+server:
+  port: 8111
