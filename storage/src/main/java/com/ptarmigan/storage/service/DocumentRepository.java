@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface DocumentRepository extends ElasticsearchRepository<ESDocument, String> {
 
-    List<ESDocument> findByTitle(String title);
+    ESDocument findByTitle(String title);
+
+
 }

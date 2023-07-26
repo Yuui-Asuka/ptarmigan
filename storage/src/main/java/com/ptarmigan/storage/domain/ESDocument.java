@@ -6,10 +6,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 @Document(indexName = "my_index")
-@Data
 @AllArgsConstructor
+@Data
 public class ESDocument {
-    @Id
     private String id;
 
     private String title;

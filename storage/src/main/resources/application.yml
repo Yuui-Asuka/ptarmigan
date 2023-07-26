@@ -5,6 +5,7 @@ spring:
 
   data:
     elasticsearch:
+
       repositories:
         enabled: true
 
@@ -28,9 +29,10 @@ spring:
     resources:
       static-locations: classpath:/static/
       add-mappings: true
-  elasticsearch:
-    username: elastic
-    password: 71*JwlJ-N2ZjoQ=QQQ_B
+#  elasticsearch:
+#    username: elastic
+#    password: 71*JwlJ-N2ZjoQ=QQQ_B
+#    uris: http://localhost:9200
 
 
 
