@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 8989
 
 spring:
 
@@ -59,3 +59,8 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
+
+logging:
+  level:
+    com.ptarmigan.payment.mapper: debug
+  org.mybatis: debug

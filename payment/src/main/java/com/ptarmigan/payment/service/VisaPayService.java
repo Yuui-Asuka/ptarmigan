@@ -7,4 +7,10 @@ import org.apache.ibatis.annotations.Select;
 public interface VisaPayService {
 
     VisaPay findAll(String cardNumber);
+
+    void insertCreditCard(String cardNumber,
+                          String cardHolderName,
+                          Integer expirationMonth,
+                          Integer expirationYear,
+                          String cvv);
 }

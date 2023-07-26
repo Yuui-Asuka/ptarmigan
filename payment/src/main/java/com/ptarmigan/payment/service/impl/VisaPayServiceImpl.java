@@ -15,4 +15,11 @@ public class VisaPayServiceImpl implements VisaPayService {
     public VisaPay findAll(String cardNumber) {
         return visaCardMapper.findAll(cardNumber);
     }
+
+    @Override
+    public void insertCreditCard(String cardNumber, String cardHolderName, Integer expirationMonth, Integer expirationYear, String cvv) {
+        visaCardMapper.insertCreditCard(cardNumber, cardHolderName, expirationMonth, expirationYear, cvv);
+    }
+
+
 }

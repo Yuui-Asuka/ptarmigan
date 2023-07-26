@@ -18,4 +18,11 @@ public interface VisaCardMapper {
             @Result(property = "cvv", column = "cvv")
     })
     VisaPay findAll(@Param("cardNumber") String cardNumber);
+
+    void insertCreditCard(@Param("cardNumber") String cardNumber,
+                          @Param("cardHolderName") String cardHolderName,
+                          @Param("expirationMonth") Integer expirationMonth,
+                          @Param("expirationYear") Integer expirationYear,
+                          @Param("cvv") String cvv
+    );
 }

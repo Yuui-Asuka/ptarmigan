@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptarmigan.payment.mapper.VisaCardMapper">
+    <!-- SQL映射语句 -->
+    <!-- 插入数据 -->
+    <insert id="insertCreditCard" parameterType="com.ptarmigan.payment.domain.VisaPay">
+        INSERT INTO credit_card (card_number, card_holder_name, expiration_month, expiration_year, cvv)
+        VALUES (#{cardNumber}, #{cardHolderName}, #{expirationMonth}, #{expirationYear}, #{cvv})
+    </insert>
+</mapper>
